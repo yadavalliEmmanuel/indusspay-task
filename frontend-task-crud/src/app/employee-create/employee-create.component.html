@@ -1,0 +1,183 @@
+<div class="container custom-container mb-5">
+  
+    <nav class="navbar navbar-expand-lg content bg-body-tertiary">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FeedBack</a>
+            </li>
+           
+          </ul>
+          
+        </div>
+        <div class="right">
+          <button class="btn btn-primary">Get started a project</button>
+       
+        </div>
+      </div>
+    </nav>
+    <section class="hero text-center py-5">
+      <div class="container">
+          <h1>Shift your business fast with Shade Pro.</h1>
+          <p>1189 Active Projects | 50 Ongoing Clients</p>
+          <a href="#" class="btn btn-primary mt-3">Get Started Now</a>
+      </div>
+    </section>
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+          <span class="fs-5">Brainwave.io</span>
+        </a>
+        <ul class="list-unstyled small">
+          <li class="mb-2 lots">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</li>
+          <li class="mb-2">Currently v5.3.3.</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Company</h5>
+        <ul class="list-unstyled">
+ 
+          <li class="mb-2">About us</li>
+          <li class="mb-2">Contact us</li>
+          <li class="mb-2">Careers</li>
+          <li class="mb-2">Press</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Product</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">Features</li>
+          <li class="mb-2">Pricing</li>
+          <li class="mb-2">Help desk</li>
+          <li class="mb-2">Support</li>
+        </ul>
+       
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Serive</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"> Digital Marketing</li>
+          <li class="mb-2">Content Writing</li>
+          <li class="mb-2">SEO for Business</li>
+          <li class="mb-2">UI Design</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <p class="legal">Legal</p>
+        <ul class="list-unstyled">
+          <li class="mb-2"> Privacy Policy</li>
+          <li class="mb-2">Terms & Conditions</li>
+          <li class="mb-2">Return Policy</li>
+      
+        </ul>
+      </div>
+    </div>
+ 
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Employee</h3>
+
+    <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+
+      <div class="mb-3">
+        <input type="date" [(ngModel)]="employeeDetails.createdAt" name="createdAt" #createdAt="ngModel" class="form-control" placeholder="Date" required>
+        <div *ngIf="createdAt.invalid && (createdAt.dirty || createdAt.touched)" class="text-danger">
+          <div *ngIf="createdAt.errors?.required">Date is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="text" [(ngModel)]="employeeDetails.first_name" name="first_name" #firstName="ngModel" class="form-control" placeholder="FirstName" required>
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="text-danger">
+          <div *ngIf="firstName.errors?.required">First name is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="text" [(ngModel)]="employeeDetails.last_name" name="last_name" #lastName="ngModel" class="form-control" placeholder="LastName" required>
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="text-danger">
+          <div *ngIf="lastName.errors?.required">Last name is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="email" [(ngModel)]="employeeDetails.emailId" name="emailId" #email="ngModel" class="form-control" placeholder="Email" required>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+          <div *ngIf="email.errors?.required">Email is required.</div>
+          <div *ngIf="email.errors?.email">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="number" [(ngModel)]="employeeDetails.age" name="age" #age="ngModel" class="form-control" placeholder="Age" required>
+        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="text-danger">
+          <div *ngIf="age.errors?.required">Age is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>
+          <input type="radio" [(ngModel)]="employeeDetails.gender" name="gender" value="Male" required>
+          Male
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="employeeDetails.gender" name="gender" value="Female" required>
+          Female
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="employeeDetails.gender" name="gender" value="Other" required>
+          Other
+        </label>
+        <div *ngIf="employeeForm.controls['gender']?.invalid && (employeeForm.controls['gender']?.dirty || employeeForm.controls['gender']?.touched)" class="text-danger">
+          <div *ngIf="employeeForm.controls['gender']?.errors?.required">Gender is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="number"  [(ngModel)]="employeeDetails.mobilenumber" name="mobilenumber" #mobileNumber="ngModel" class="form-control" placeholder="Phone" required pattern="^[0-9]{10}$">
+        <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="text-danger">
+          <div *ngIf="mobileNumber.errors?.required">Phone number is required.</div>
+          <div *ngIf="mobileNumber.errors?.pattern">Phone number must be exactly 10 digits.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="text" [(ngModel)]="employeeDetails.pan_no" name="pan_no" #panNo="ngModel" class="form-control" placeholder="Pan_no" required>
+        <div *ngIf="panNo.invalid && (panNo.dirty || panNo.touched)" class="text-danger">
+          <div *ngIf="panNo.errors?.required">PAN number is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="text" [(ngModel)]="employeeDetails.adhaar_no" name="adhaar_no" #adhaarNo="ngModel" class="form-control" placeholder="Adhaar_no" required>
+        <div *ngIf="adhaarNo.invalid && (adhaarNo.dirty || adhaarNo.touched)" class="text-danger">
+          <div *ngIf="adhaarNo.errors?.required">Aadhaar number is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input type="checkbox" [(ngModel)]="employeeDetails.status" name="status" #status="ngModel">
+        <label>{{employeeDetails.status?'ACTIVE' : 'NO-ACTIVE'}}</label>
+        <div *ngIf="status.invalid && (status.dirty || status.touched)" class="text-danger">
+          <div *ngIf="status.errors?.required">Status is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="employeeForm.invalid">Create Employee</button>
+      </div>
+    </form>
+
+  </div>
+</div>

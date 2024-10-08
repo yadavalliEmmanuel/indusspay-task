@@ -1,0 +1,121 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Update Employee</h3>
+
+    <div class="mb-3">
+      <label for="">FirstName</label>
+      <input
+        type="text"
+        [(ngModel)]="employeeData.first_name"
+        class="form-control"
+        placeholder="Name"
+      />
+    </div>
+    
+    <div class="mb-3">
+      <label for="">CreatedDate</label>
+      <input
+        type="date"
+        [(ngModel)]="employeeData.createdAt"
+        class="form-control"
+        placeholder="Name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="">LastName</label>
+      <input
+        type="text"
+        [(ngModel)]="employeeData.last_name"
+        class="form-control"
+        placeholder="LastName"
+      />
+    </div>
+    <div class="mb-3">
+      <label>
+        <input type="radio" [(ngModel)]="employeeData.gender" name="gender" value="Male">
+        Male
+      </label>
+      <label>
+        <input type="radio" [(ngModel)]="employeeData.gender" name="gender" value="Female">
+        Female
+      </label>
+      <label>
+        <input type="radio" [(ngModel)]="employeeData.gender" name="gender" value="Other" >
+        Other
+      </label>
+     
+    </div>
+
+    <div class="mb-3">
+      <label for="">EmailId</label>
+
+      <input
+        type="text"
+        [(ngModel)]="employeeData.emailId"
+        class="form-control"
+        placeholder="Email"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="">Mobilenumber</label>
+      
+      <input
+        type="text"
+        [(ngModel)]="employeeData.mobilenumber"
+        class="form-control"
+        placeholder="Mobilenumber"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="">Age</label>
+
+      <input
+        type="text"
+        [(ngModel)]="employeeData.age"
+        class="form-control"
+        placeholder="Age"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="">Pan_no</label>
+
+      <input
+        type="text"
+        [(ngModel)]="employeeData.pan_no"
+        class="form-control"
+        placeholder="Pan_no"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="">Adhaar_no</label>
+
+      <input
+        type="text"
+        [(ngModel)]="employeeData.adhaar_no"
+        class="form-control"
+        placeholder="adhaar_no"
+      />
+    </div>
+    <div class="mb-3">
+      <label for=""> {{employeeData.status?'ACTIVE' : 'NO-ACTIVE'}}</label>
+     
+
+      <input
+        type="checkbox"
+        [(ngModel)]="employeeData.status"
+       
+        placeholder="status"
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        class="btn btn-success btn-lg btn-block"
+        (click)="updateEmployee()"
+      >
+        Update Employee
+      </button>
+    </div>
+  </div>
+</div>

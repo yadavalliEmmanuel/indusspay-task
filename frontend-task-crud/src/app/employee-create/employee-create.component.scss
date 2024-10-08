@@ -1,0 +1,24 @@
+.custom-container{
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content ul{
+        display: flex;
+        gap: 15px;
+
+    }
+    .content ul li{
+        list-style-type: none;
+       
+
+    }
+    .content ul li a{
+        // list-style-type: none;
+        // : none;
+        list-style: none;
+       
+
+    }
+}
